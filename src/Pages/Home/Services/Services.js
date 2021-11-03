@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Container } from "@mui/material";
+import Service from "../Service/Service"
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -24,7 +25,7 @@ const Services = () => {
           >
             {Array.from(Array(6)).map((_, index) => (
               <Grid item xs={2} sm={4} md={4} key={index}>
-                <Item>xs=2</Item>
+                <Service></Service>
               </Grid>
             ))}
           </Grid>
