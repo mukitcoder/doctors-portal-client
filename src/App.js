@@ -1,11 +1,15 @@
 import './App.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
+import Appointment from './Pages/Home/Appointment/Appointment/Appointment';
 
 function App() {
   return (
@@ -15,11 +19,11 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/appointment">
+            <Appointment />
           </Route>
         </Switch>
      </Router>
