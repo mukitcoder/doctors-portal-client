@@ -9,7 +9,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
-import Appointment from './Pages/Home/Appointment/Appointment/Appointment';
+import Appointment from './Pages/Appointment/Appointment/Appointment';
 
 function App() {
   return (
