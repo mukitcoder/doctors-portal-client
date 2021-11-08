@@ -1,32 +1,40 @@
-import './App.css';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import Home from './Pages/Home/Home/Home';
-import Appointment from './Pages/Appointment/Appointment/Appointment';
+import "./App.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Pages/Home/Home/Home";
+import Appointment from "./Pages/Appointment/Appointment/Appointment";
+import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <div className="App">
-     <Router>
-     <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
+      <AuthProvider>
+      <Router>
+        <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/appointment">
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <PrivateRoute path="/appointment">
             <Appointment />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
         </Switch>
-     </Router>
+      </Router>
+      </AuthProvider>
     </div>
   );
 }
